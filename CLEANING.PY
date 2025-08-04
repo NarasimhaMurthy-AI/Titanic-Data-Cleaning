@@ -1,6 +1,7 @@
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+from sklearn.preprocessing import StandardScaler
 
 # Load the dataset
 df = pd.read_csv(r"D:\AIML PROJECTS\Titanic-Dataset.csv")
@@ -33,8 +34,6 @@ df_encoded = pd.get_dummies(df, columns=['Sex', 'Embarked'], drop_first=True)
 
 print(df_encoded.head())
 
-from sklearn.preprocessing import StandardScaler
-
 # Select numeric columns for scaling
 cols_to_scale = ['Age', 'Fare', 'SibSp', 'Parch']
 
@@ -57,4 +56,5 @@ print(df_encoded.head())
 
 # Save
 df_encoded.to_csv(r"D:\AIML PROJECTS\cleaned_titanic.csv", index=False)
+
 
